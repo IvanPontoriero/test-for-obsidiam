@@ -1,0 +1,52 @@
+<div class="converter-card">
+    <main class="main-form-container">
+      <form>
+        <h2>Valor de BTC hoy: US$60.000</h2>
+        <div class="currency-convert">
+          <div class="form-frame">
+            <label for="amount" class="label">Moneda a convertir</label>
+            <div class="convertion-frame">
+              <input 
+                autocomplete="off" 
+                type="number" 
+                inputmode="decimal"
+                maxlength="15" 
+                name="amount" 
+                [placeholder]="!switch ? inputCurrency : outputCurrency" 
+                (keyup)="currencyConvert($event)"
+              />
+              <div class="currency">
+                <img [src]="!switch ? inputLogo : outputLogo" alt="input currency logo" />
+                {{!switch ? inputCurrency : outputCurrency}}
+              </div>
+            </div>
+          </div>
+          <div class="invert-currency">
+            <button (click)="switchCurrency($event)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#00d1ff">
+                <path d="M502.6 278.6l-96 96C400.4 380.9 392.2 384 384 384s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L402.8 288h-293.5l41.38 41.38c12.5 12.5 12.5 32.75 0 45.25C144.4 380.9 136.2 384 128 384s-16.38-3.125-22.62-9.375l-96-96c-12.5-12.5-12.5-32.75 0-45.25l96-96c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224h293.5l-41.38-41.38c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l96 96C515.1 245.9 515.1 266.1 502.6 278.6z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="form-frame">
+            <label for="convertion">Resultado en {{!switch ? outputCurrency : inputCurrency}}</label>
+            <div class="convertion-frame">
+              <input 
+                #asConvertion
+                autocomplete="off" 
+                type="number" 
+                maxlength="15" 
+                name="convertion" 
+                [placeholder]="outputValue" 
+                readonly
+              />
+              <div class="currency">
+                <img [src]="!switch ? outputLogo : inputLogo" alt="output currency logo" />
+                {{!switch ? outputCurrency : inputCurrency}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+</div>

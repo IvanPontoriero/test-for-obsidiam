@@ -1,0 +1,141 @@
+.converter-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    /* height: 55vh; */
+    background-color: #f1f1f1;
+    border-radius: .25em;
+}
+
+.convert-card:active {
+    box-shadow: 0 0 1em #222222;
+}
+
+.main-form-container {
+    padding: 1.5rem;
+}
+
+.main-form-container form {
+    height: 100%;
+}
+
+.main-form-container h2 {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.currency-convert {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1em;
+}
+
+.currency-convert label{
+    font-weight: 600;
+    font-size: 1rem;
+    color: #45495d;
+}
+
+.form-frame {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.convertion-frame {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5em;
+    color: #212529;
+    padding-block: .75rem;
+}
+
+.convertion-frame input{
+    padding: 6px 12px;
+    color: #212529;
+    border: 1px solid #21252941;
+    border-radius: .15em;
+    font-weight: 500;
+    max-width: 60%;
+}
+
+.currency {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .15em;
+    padding: 3px;
+    background-color: #ffffff;
+    border: 1px solid #21252941;
+}
+
+.currency img  {
+    height: 15px;
+}
+
+.invert-currency {
+    place-self: center;
+    margin: 0;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border: 0;
+}
+
+.invert-currency button {
+    display: inline-flex;
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid rgb(221,221,221);
+    border-radius: 50%;
+    padding: .5rem;
+    appearance: button;
+    cursor: pointer;
+    transition: 750ms;
+}
+
+.invert-currency button:active {
+    transform: rotateY(360deg)
+}
+
+.invert-currency svg {
+    width: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .currency-convert label{
+        font-size: 1.3rem;
+    }
+
+    .convertion-frame {
+        padding-block: 1em;
+    }
+
+    .convertion-frame input{
+        max-width: 100%;
+        height: 5vh;
+    }
+
+    .currency {
+        height: 5vh;
+        padding: 6px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .converter-card {
+        width: 65vw;
+        height: 45vh;
+    }
+
+    .currency-convert {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    } 
+
+    .invert-currency {
+        margin-top: 2rem;
+    }
+}
